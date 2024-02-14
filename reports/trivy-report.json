@@ -1,0 +1,502 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2024-02-14T06:19:39.741355596Z",
+  "ArtifactName": "final:latest",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "alpine",
+      "Name": "3.18.5"
+    },
+    "ImageID": "sha256:481ce97ead5fd43834774b9ece525789a3c9032f841ea02ee8f9570f2fbd0220",
+    "DiffIDs": [
+      "sha256:9fe9a137fd002363ac64f5af66146702432b638a83ee0c5b620c40a9e433e813",
+      "sha256:1d051817968a04e62e1fb7e26e07e92016614c40abb9ccf8298e82b16c5dbdb2",
+      "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b",
+      "sha256:2628c4aefa52667e70576dd5aa074f5ba168a5be1e58a1b7d83fe63998de731c",
+      "sha256:e2b769a4c509411070a2229bef354c720e463bdae91d7fbb84eb01011561c3b6",
+      "sha256:e1af846eb910cdfcf073f4d0523ce8951fcfa7116ab2696f34082193b5c5a369",
+      "sha256:18188f132c04b28515ab8c864589f31dd84b23482d912545c072dc2d45165792",
+      "sha256:06599d6f459d9a04b3417d6171b5aac07f306803d60b4ea2863265433adfc50f",
+      "sha256:4c266b44cac4309211055f3f6bba4b8bd005f372a9ab8e9060f4674f9e2ebaa4",
+      "sha256:9261d068a671e7cf3b1f05169895a637328e032088c0c4e4b089a5bcc0dec467"
+    ],
+    "RepoTags": [
+      "final:latest"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "created": "2024-02-13T18:05:42.207758228+05:30",
+      "history": [
+        {
+          "created": "2023-11-30T23:22:52Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:fc714080c3bcbbce7ac746a10d7b4355ffa36293a8d435d62cd5359ea8eb8364 in / "
+        },
+        {
+          "created": "2023-11-30T23:22:52Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/sh\"]",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-01-11T11:31:56Z",
+          "created_by": "RUN /bin/sh -c apk --no-cache add ca-certificates git # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-01-11T11:31:59Z",
+          "created_by": "COPY trivy /usr/local/bin/trivy # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-01-11T11:31:59Z",
+          "created_by": "COPY contrib/*.tpl contrib/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-01-11T11:31:59Z",
+          "created_by": "ENTRYPOINT [\"trivy\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T08:24:10Z",
+          "created_by": "RUN /bin/sh -c apk add --no-cache --upgrade bash \u0026\u0026     apk add jq # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T08:51:39Z",
+          "created_by": "WORKDIR /app",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T08:51:39Z",
+          "created_by": "COPY filesystemTrivyScanner.sh . # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T08:51:39Z",
+          "created_by": "COPY imageTrivyScanner.sh . # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "COPY build.sh . # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ADD BP-BASE-SHELL-STEPS /app/buildpiper/shell-functions/ # buildkit",
+          "comment": "buildkit.dockerfile.v0"
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV ACTIVITY_SUB_TASK_CODE=BP-TRIVY-TASK",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV SLEEP_DURATION=5s",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV VALIDATION_FAILURE_ACTION=WARNING",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV SCANNER=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV IMAGE_NAME=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV IMAGE_TAG=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV SCAN_TYPE=",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV SCAN_SEVERITY=HIGH,CRITICAL",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV FORMAT_ARG=table",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENV OUTPUT_ARG=trivy-report.json",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-02-13T12:35:42Z",
+          "created_by": "ENTRYPOINT [\"./build.sh\"]",
+          "comment": "buildkit.dockerfile.v0",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:9fe9a137fd002363ac64f5af66146702432b638a83ee0c5b620c40a9e433e813",
+          "sha256:1d051817968a04e62e1fb7e26e07e92016614c40abb9ccf8298e82b16c5dbdb2",
+          "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b",
+          "sha256:2628c4aefa52667e70576dd5aa074f5ba168a5be1e58a1b7d83fe63998de731c",
+          "sha256:e2b769a4c509411070a2229bef354c720e463bdae91d7fbb84eb01011561c3b6",
+          "sha256:e1af846eb910cdfcf073f4d0523ce8951fcfa7116ab2696f34082193b5c5a369",
+          "sha256:18188f132c04b28515ab8c864589f31dd84b23482d912545c072dc2d45165792",
+          "sha256:06599d6f459d9a04b3417d6171b5aac07f306803d60b4ea2863265433adfc50f",
+          "sha256:4c266b44cac4309211055f3f6bba4b8bd005f372a9ab8e9060f4674f9e2ebaa4",
+          "sha256:9261d068a671e7cf3b1f05169895a637328e032088c0c4e4b089a5bcc0dec467"
+        ]
+      },
+      "config": {
+        "Entrypoint": [
+          "./build.sh"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "ACTIVITY_SUB_TASK_CODE=BP-TRIVY-TASK",
+          "SLEEP_DURATION=5s",
+          "VALIDATION_FAILURE_ACTION=WARNING",
+          "SCANNER=",
+          "IMAGE_NAME=",
+          "IMAGE_TAG=",
+          "SCAN_TYPE=",
+          "SCAN_SEVERITY=HIGH,CRITICAL",
+          "FORMAT_ARG=table",
+          "OUTPUT_ARG=trivy-report.json"
+        ],
+        "Labels": {
+          "org.opencontainers.image.created": "2024-01-11T10:53:21Z",
+          "org.opencontainers.image.description": "A Fast Vulnerability Scanner for Containers",
+          "org.opencontainers.image.documentation": "https://aquasecurity.github.io/trivy/v0.48.3/",
+          "org.opencontainers.image.revision": "eac751339d1864b6c0ebf334becec0a8c722b13b",
+          "org.opencontainers.image.source": "https://github.com/aquasecurity/trivy",
+          "org.opencontainers.image.title": "trivy",
+          "org.opencontainers.image.url": "https://www.aquasec.com/products/trivy/",
+          "org.opencontainers.image.vendor": "Aqua Security",
+          "org.opencontainers.image.version": "0.48.3"
+        },
+        "WorkingDir": "/app"
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "final:latest (alpine 3.18.5)",
+      "Class": "os-pkgs",
+      "Type": "alpine",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2023-52425",
+          "PkgID": "libexpat@2.5.0-r1",
+          "PkgName": "libexpat",
+          "InstalledVersion": "2.5.0-r1",
+          "FixedVersion": "2.6.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:1d051817968a04e62e1fb7e26e07e92016614c40abb9ccf8298e82b16c5dbdb2"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2023-52425",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Title": "expat: parsing large tokens can trigger a denial of service",
+          "Description": "libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2023-52425",
+            "https://github.com/libexpat/libexpat/pull/789",
+            "https://nvd.nist.gov/vuln/detail/CVE-2023-52425",
+            "https://www.cve.org/CVERecord?id=CVE-2023-52425"
+          ],
+          "PublishedDate": "2024-02-04T20:15:46.063Z",
+          "LastModifiedDate": "2024-02-09T02:03:16.3Z"
+        }
+      ]
+    },
+    {
+      "Target": "usr/local/bin/trivy",
+      "Class": "lang-pkgs",
+      "Type": "gobinary",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-23652",
+          "PkgName": "github.com/moby/buildkit",
+          "InstalledVersion": "v0.11.6",
+          "FixedVersion": "0.12.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23652",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "moby/buildkit: possible host system access from mount stub cleaner",
+          "Description": "BuildKit is a toolkit for converting source code to build artifacts in an efficient, expressive and repeatable manner. A malicious BuildKit frontend or Dockerfile using RUN --mount could trick the feature that removes empty files created for the mountpoints into removing a file outside the container, from the host system. The issue has been fixed in v0.12.5. Workarounds include avoiding using BuildKit frontends from an untrusted source or building an untrusted Dockerfile containing RUN --mount feature.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "nvd": 4,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+              "V3Score": 10
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:N/I:H/A:H",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-23652",
+            "https://github.com/moby/buildkit",
+            "https://github.com/moby/buildkit/pull/4603",
+            "https://github.com/moby/buildkit/releases/tag/v0.12.5",
+            "https://github.com/moby/buildkit/security/advisories/GHSA-4v98-7qmw-rqr8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-23652",
+            "https://snyk.io/blog/cve-2024-23652-buildkit-build-time-container-teardown-arbitrary-delete/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-23652"
+          ],
+          "PublishedDate": "2024-01-31T22:15:54.377Z",
+          "LastModifiedDate": "2024-02-09T01:44:27.827Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-23653",
+          "PkgName": "github.com/moby/buildkit",
+          "InstalledVersion": "v0.11.6",
+          "FixedVersion": "0.12.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23653",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "moby/buildkit: Buildkit's interactive containers API does not validate entitlements check",
+          "Description": "BuildKit is a toolkit for converting source code to build artifacts in an efficient, expressive and repeatable manner. In addition to running containers as build steps, BuildKit also provides APIs for running interactive containers based on built images. It was possible to use these APIs to ask BuildKit to run a container with elevated privileges. Normally, running such containers is only allowed if special `security.insecure` entitlement is enabled both by buildkitd configuration and allowed by the user initializing the build request. The issue has been fixed in v0.12.5 . Avoid using BuildKit frontends from untrusted sources. \n",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-863"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "nvd": 4,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-23653",
+            "https://github.com/moby/buildkit",
+            "https://github.com/moby/buildkit/pull/4602",
+            "https://github.com/moby/buildkit/releases/tag/v0.12.5",
+            "https://github.com/moby/buildkit/security/advisories/GHSA-wr6v-9f75-vh2g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-23653",
+            "https://snyk.io/blog/cve-2024-23653-buildkit-grpc-securitymode-privilege-check/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-23653"
+          ],
+          "PublishedDate": "2024-01-31T22:15:54.6Z",
+          "LastModifiedDate": "2024-02-09T01:44:46.71Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-23651",
+          "PkgName": "github.com/moby/buildkit",
+          "InstalledVersion": "v0.11.6",
+          "FixedVersion": "0.12.5",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23651",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "moby/buildkit: possible race condition with accessing subpaths from cache mounts",
+          "Description": "BuildKit is a toolkit for converting source code to build artifacts in an efficient, expressive and repeatable manner. Two malicious build steps running in parallel sharing the same cache mounts with subpaths could cause a race condition that can lead to files from the host system being accessible to the build container. The issue has been fixed in v0.12.5. Workarounds include, avoiding using BuildKit frontend from an untrusted source or building an untrusted Dockerfile containing cache mounts with --mount=type=cache,source=... options.\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-362"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 8.7
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-23651",
+            "https://github.com/moby/buildkit",
+            "https://github.com/moby/buildkit/pull/4604",
+            "https://github.com/moby/buildkit/releases/tag/v0.12.5",
+            "https://github.com/moby/buildkit/security/advisories/GHSA-m3r6-h7wv-7xxv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-23651",
+            "https://snyk.io/blog/cve-2024-23651-docker-buildkit-mount-cache-race/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-23651",
+            "https://www.openwall.com/lists/oss-security/2019/05/28/1"
+          ],
+          "PublishedDate": "2024-01-31T22:15:54.183Z",
+          "LastModifiedDate": "2024-02-09T01:43:51.767Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-21626",
+          "PkgName": "github.com/opencontainers/runc",
+          "InstalledVersion": "v1.1.5",
+          "FixedVersion": "1.1.12",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:78ddeafd087f71dfe25f2c4c765aafb3d4a221e2f3d38d62e6d1aa691ac40a5b"
+          },
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-21626",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Go",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Ago"
+          },
+          "Title": "runc: file descriptor leak",
+          "Description": "runc is a CLI tool for spawning and running containers on Linux according to the OCI specification. In runc 1.1.11 and earlier, due to an internal file descriptor leak, an attacker could cause a newly-spawned container process (from runc exec) to have a working directory in the host filesystem namespace, allowing for a container escape by giving access to the host filesystem (\"attack 2\"). The same attack could be used by a malicious image to allow a container process to gain access to the host filesystem through runc run (\"attack 1\"). Variants of attacks 1 and 2 could be also be used to overwrite semi-arbitrary host binaries, allowing for complete container escapes (\"attack 3a\" and \"attack 3b\"). runc 1.1.12 includes patches for this issue. ",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-668",
+            "CWE-403"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "cbl-mariner": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "ubuntu": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 8.6
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 8.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+              "V3Score": 8.6
+            }
+          },
+          "References": [
+            "http://packetstormsecurity.com/files/176993/runc-1.1.11-File-Descriptor-Leak-Privilege-Escalation.html",
+            "http://www.openwall.com/lists/oss-security/2024/02/01/1",
+            "http://www.openwall.com/lists/oss-security/2024/02/02/3",
+            "https://access.redhat.com/errata/RHSA-2024:0670",
+            "https://access.redhat.com/security/cve/CVE-2024-21626",
+            "https://bugzilla.redhat.com/2258725",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21626",
+            "https://errata.almalinux.org/9/ALSA-2024-0670.html",
+            "https://github.com/opencontainers/runc",
+            "https://github.com/opencontainers/runc/commit/02120488a4c0fc487d1ed2867e901eeed7ce8ecf",
+            "https://github.com/opencontainers/runc/releases/tag/v1.1.12",
+            "https://github.com/opencontainers/runc/security/advisories/GHSA-xr7r-f8xq-vfvv",
+            "https://linux.oracle.com/cve/CVE-2024-21626.html",
+            "https://linux.oracle.com/errata/ELSA-2024-17931.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/2NLXNE23Q5ESQUAI22Z7A63JX2WMPJ2J/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SYMO3BANINS6RGFQFKPRG4FIOJ7GWYTL/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-21626",
+            "https://ubuntu.com/security/notices/USN-6619-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-21626"
+          ],
+          "PublishedDate": "2024-01-31T22:15:53.78Z",
+          "LastModifiedDate": "2024-02-11T06:15:11.683Z"
+        }
+      ]
+    }
+  ]
+}
